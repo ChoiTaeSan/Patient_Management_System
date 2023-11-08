@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.patient_management_system.PatientManagementController">
+    <children>
+        <TextField fx:id="nameField" promptText="이름" />
+        <TextField fx:id="ageField" promptText="나이" />
+        <TextField fx:id="diagnosisField" promptText="진단" />
+        <DatePicker fx:id="diagnosisDateField" promptText="진단일자 ex)2023.11.08" />
+        <HBox prefHeight="20.0" prefWidth="200.0">
+            <children>
+                <Button fx:id="addButton" onAction="#addPatient" text="추가" />
+                <Button fx:id="updateButton" onAction="#updatePatient" text="수정" />
+                <Button fx:id="deleteButton" onAction="#deletePatient" text="삭제" />
+            </children>
+        </HBox>
+        <TableView fx:id="patientTable" prefHeight="400.0" prefWidth="320.0">
+            <columns>
+                <TableColumn text="이름">
+                    <cellValueFactory><PropertyValueFactory property="name" /></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="나이">
+                    <cellValueFactory><PropertyValueFactory property="age" /></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="진단">
+                    <cellValueFactory><PropertyValueFactory property="diagnosis" /></cellValueFactory>
+                </TableColumn>
+                <TableColumn text="진단 일자">
+                    <cellValueFactory><PropertyValueFactory property="diagnosisDate" /></cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </children>
+</VBox>
